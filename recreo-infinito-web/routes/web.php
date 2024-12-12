@@ -105,5 +105,5 @@ Route::middleware('auth')->get('/user', function () {
 // Rutas para Vue.js SPA
 Route::get('{any}', function () {
     return file_get_contents(public_path('index.html'));
-})->where('any', '^(?!build\/|images\/|css\/|js\/).*$');
+})->where('any', '.*');
 
