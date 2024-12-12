@@ -17,6 +17,22 @@ export default defineConfig({
         },
     },
     build: {
-        outDir: 'public/build',  // Verifica que esta ruta esté correcta
+        outDir: 'public/build',
+        rollupOptions: {
+            output: {
+                assetFileNames: (assetInfo) => {
+                    let extType = assetInfo.name.split('.').pop();
+                    if (/css|js|png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                        extType = extType.toLowerCase();
+                    } else {
+                        extType = 'other';
+                    }
+                    return `${extType}/[name]-[hash][extname]`;
+                }
+            }
+        }
+    },
+    server: {
+        https: true,
     }
 });
