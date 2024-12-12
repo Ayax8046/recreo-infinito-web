@@ -17,11 +17,6 @@ export default defineConfig({
         },
     },
     build: {
-        outDir: 'public/build',  // Los archivos deben ser generados en esta carpeta
-        manifest: true,           // Importante para generar el archivo manifest.json
-        rollupOptions: {
-            input: '/resources/js/app.js',  // Entrada de tu aplicación
-        }
+        outDir: 'public/build',  // Verifica que esta ruta esté correcta
     }
 });
-
