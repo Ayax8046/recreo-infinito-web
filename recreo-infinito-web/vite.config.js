@@ -17,6 +17,6 @@ export default defineConfig({
         },
     },
     build: {
-        outDir: 'public/build',  // Verifica que esta ruta esté correcta
+        outDir: 'public',  // Verifica que esta ruta esté correcta
     },
 });
