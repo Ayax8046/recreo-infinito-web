@@ -102,7 +102,8 @@ Route::middleware('auth')->get('/user', function () {
     return response()->json(Auth::user());
 });
 
-// Rutas SPA para Vue.js
+// Rutas para Vue.js SPA
 Route::get('{any}', function () {
     return file_get_contents(public_path('index.html'));
-})->where('any', '.*');
+})->where('any', '^(?!build\/|images\/|css\/|js\/).*$');
+
